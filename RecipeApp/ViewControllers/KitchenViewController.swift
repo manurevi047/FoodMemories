@@ -68,8 +68,10 @@ class KitchenViewController: UIViewController {
                   let name = nameField.text,
                   !name.isEmpty else { return }
             
-            let quantity = alert.textFields?[1]?.text ?? ""
-            let unit = alert.textFields?[2]?.text ?? ""
+            let quantityField = alert.textFields?[1]
+            let unitField = alert.textFields?[2]
+            let quantity = quantityField?.text ?? ""
+            let unit = unitField?.text ?? ""
             
             let newIngredient = Ingredient(name: name, quantity: quantity, unit: unit)
             self.ingredients.append(newIngredient)
@@ -109,8 +111,10 @@ class KitchenViewController: UIViewController {
                   let name = nameField.text,
                   !name.isEmpty else { return }
             
-            let quantity = alert.textFields?[1]?.text ?? ""
-            let unit = alert.textFields?[2]?.text ?? ""
+            let quantityField = alert.textFields?[1]
+            let unitField = alert.textFields?[2]
+            let quantity = quantityField?.text ?? ""
+            let unit = unitField?.text ?? ""
             
             self.ingredients[indexPath.row] = Ingredient(name: name, quantity: quantity, unit: unit, category: ingredient.category)
             self.saveIngredients()
