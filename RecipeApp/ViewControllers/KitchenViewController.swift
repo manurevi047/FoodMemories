@@ -33,7 +33,7 @@ class KitchenViewController: UIViewController {
         
         // Create cook button
         let cookButton = UIButton(type: .system)
-        cookButton.setTitle("Cook", for: .normal)
+        cookButton.setTitle("🍳 Cook", for: .normal)
         cookButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         cookButton.backgroundColor = .systemOrange
         cookButton.setTitleColor(.white, for: .normal)
@@ -359,7 +359,7 @@ class IngredientTableViewCell: UITableViewCell {
     
     func configure(with ingredient: Ingredient) {
         nameLabel.text = ingredient.name
-        categoryLabel.text = ingredient.category.emoji
+        categoryLabel.text = IngredientCategory.emojiForIngredient(ingredient.name)
         
         var details = [String]()
         if !ingredient.quantity.isEmpty {
