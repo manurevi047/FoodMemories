@@ -31,7 +31,23 @@ class KitchenViewController: UIViewController {
         tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: "IngredientCell")
         view.addSubview(tableView)
         
-        // Create add button
+        // Create cook button
+        let cookButton = UIButton(type: .system)
+        cookButton.setTitle("🍳 Cook Recipe", for: .normal)
+        cookButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        cookButton.backgroundColor = .systemGreen
+        cookButton.setTitleColor(.white, for: .normal)
+        cookButton.layer.cornerRadius = 12
+        cookButton.translatesAutoresizingMaskIntoConstraints = false
+        cookButton.addTarget(self, action: #selector(cookButtonTapped), for: .touchUpInside)
+        view.addSubview(cookButton)
+        
+        // Create navigation bar buttons
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .compose,
+            target: self,
+            action: #selector(settingsButtonTapped)
+        )
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
@@ -43,7 +59,12 @@ class KitchenViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: cookButton.topAnchor, constant: -12),
+            
+            cookButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            cookButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            cookButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            cookButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -162,6 +183,51 @@ class KitchenViewController: UIViewController {
         if let data = userDefaults.data(forKey: ingredientsKey),
            let decoded = try? JSONDecoder().decode([Ingredient].self, from: data) {
             ingredients = decoded
+        }
+    }
+    
+    @objc private func settingsButtonTapped() {
+        let settingsVC = SettingsViewController()
+        let navController = UINavigationController(rootViewController: settingsVC)
+        present(navController, animated: true)
+    }
+    
+    @objc private func cookButtonTapped() {
+        guard !ingredients.isEmpty else {
+            let alert = UIAlertController(
+                title: "No Ingredients",
+                message: "Please add some ingredients before generating a recipe.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return
+        }
+        
+        // Show loading alert
+        let loadingAlert = UIAlertController(title: "Generating Recipe", message: "Please wait while we create a delicious recipe for you...", preferredStyle: .alert)
+        present(loadingAlert, animated: true)
+        
+        OpenAIService.shared.generateRecipe(from: ingredients) { [weak self] result in
+            DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: true) {
+                    switch result {
+                    case .success(let recipe):
+                        let recipeVC = RecipeViewController(recipe: recipe)
+                        let navController = UINavigationController(rootViewController: recipeVC)
+                        self?.present(navController, animated: true)
+                        
+                    case .failure(let error):
+                        let errorAlert = UIAlertController(
+                            title: "Error",
+                            message: error.localizedDescription,
+                            preferredStyle: .alert
+                        )
+                        errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(errorAlert, animated: true)
+                    }
+                }
+            }
         }
     }
 }
