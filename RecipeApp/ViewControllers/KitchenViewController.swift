@@ -33,9 +33,9 @@ class KitchenViewController: UIViewController {
         
         // Create cook button
         let cookButton = UIButton(type: .system)
-        cookButton.setTitle("🍳 Cook Recipe", for: .normal)
+        cookButton.setTitle("Cook", for: .normal)
         cookButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        cookButton.backgroundColor = .systemGreen
+        cookButton.backgroundColor = .systemOrange
         cookButton.setTitleColor(.white, for: .normal)
         cookButton.layer.cornerRadius = 12
         cookButton.translatesAutoresizingMaskIntoConstraints = false
@@ -320,10 +320,10 @@ class IngredientTableViewCell: UITableViewCell {
         detailsLabel.textColor = .secondaryLabel
         categoryLabel.font = UIFont.systemFont(ofSize: 20)
         
-        deleteButton.setTitle("🗑️", for: .normal)
-        deleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        deleteButton.backgroundColor = .systemRed.withAlphaComponent(0.1)
-        deleteButton.layer.cornerRadius = 15
+        deleteButton.setTitle("−", for: .normal)
+        deleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        deleteButton.setTitleColor(.black, for: .normal)
+        deleteButton.backgroundColor = .clear
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         
@@ -348,8 +348,8 @@ class IngredientTableViewCell: UITableViewCell {
             
             deleteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             deleteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            deleteButton.widthAnchor.constraint(equalToConstant: 30),
-            deleteButton.heightAnchor.constraint(equalToConstant: 30)
+            deleteButton.widthAnchor.constraint(equalToConstant: 24),
+            deleteButton.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
     
