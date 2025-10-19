@@ -22,7 +22,6 @@ class RecipeViewController: UIViewController {
     }
     
     private func setupUI() {
-        title = recipe.title
         view.backgroundColor = .systemBackground
         
         // Setup navigation bar
