@@ -2,7 +2,7 @@ import UIKit
 
 class KitchenViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    private var tableView: UITableView!
     
     private var ingredients: [Ingredient] = []
     private let userDefaults = UserDefaults.standard
