@@ -8,6 +8,21 @@ struct Recipe: Codable {
     let ingredients: [RecipeIngredient]
     let directions: [String]
     
+    // Optional fields for saved recipes
+    let id: String?
+    let createdAt: Date?
+    
+    init(title: String, serves: Int, prepTime: String, cookTime: String, ingredients: [RecipeIngredient], directions: [String], id: String? = nil, createdAt: Date? = nil) {
+        self.title = title
+        self.serves = serves
+        self.prepTime = prepTime
+        self.cookTime = cookTime
+        self.ingredients = ingredients
+        self.directions = directions
+        self.id = id
+        self.createdAt = createdAt
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title
         case serves
@@ -15,6 +30,8 @@ struct Recipe: Codable {
         case cookTime = "cook_time"
         case ingredients
         case directions
+        case id
+        case createdAt = "created_at"
     }
 }
 

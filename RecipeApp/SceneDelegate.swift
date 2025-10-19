@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         kitchenNavController.tabBarItem = UITabBarItem(title: "Kitchen", image: UIImage(systemName: "house"), tag: 0)
         
         // Create the Cook Book view controller
-        let cookBookVC = CookBookViewController()
+        let cookBookVC = CookbookViewController()
         let cookBookNavController = UINavigationController(rootViewController: cookBookVC)
         cookBookNavController.tabBarItem = UITabBarItem(title: "Cook Book", image: UIImage(systemName: "book"), tag: 1)
         

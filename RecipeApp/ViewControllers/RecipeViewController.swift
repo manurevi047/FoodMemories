@@ -31,6 +31,14 @@ class RecipeViewController: UIViewController {
             action: #selector(doneButtonTapped)
         )
         
+        // Add save button to left side
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Save",
+            style: .plain,
+            target: self,
+            action: #selector(saveButtonTapped)
+        )
+        
         // Setup scroll view
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -221,6 +229,38 @@ class RecipeViewController: UIViewController {
     
     @objc private func doneButtonTapped() {
         dismiss(animated: true)
+    }
+    
+    @objc private func saveButtonTapped() {
+        // Show loading alert
+        let loadingAlert = UIAlertController(title: "Saving Recipe", message: "Please wait...", preferredStyle: .alert)
+        present(loadingAlert, animated: true)
+        
+        SupabaseService.shared.saveRecipe(recipe) { [weak self] result in
+            DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: true) {
+                    switch result {
+                    case .success(let savedRecipe):
+                        let successAlert = UIAlertController(
+                            title: "Recipe Saved!",
+                            message: "Your recipe has been saved to your cookbook.",
+                            preferredStyle: .alert
+                        )
+                        successAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(successAlert, animated: true)
+                        
+                    case .failure(let error):
+                        let errorAlert = UIAlertController(
+                            title: "Save Failed",
+                            message: "Failed to save recipe: \(error.localizedDescription)",
+                            preferredStyle: .alert
+                        )
+                        errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(errorAlert, animated: true)
+                    }
+                }
+            }
+        }
     }
     
     @objc private func playButtonTapped() {
