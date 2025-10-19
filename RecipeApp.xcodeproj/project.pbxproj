@@ -14,12 +14,12 @@
 		A1234567890ABCDEF009 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF008 /* RecipeViewController.swift */; };
 		A1234567890ABCDEF010 /* CookingModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF011 /* CookingModeViewController.swift */; };
 		A1234567890ABCDEF012 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF013 /* SettingsViewController.swift */; };
-		A1234567890ABCDEF012 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF013 /* Ingredient.swift */; };
-		A1234567890ABCDEF014 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF015 /* Recipe.swift */; };
-		A1234567890ABCDEF016 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF017 /* OpenAIService.swift */; };
-		A1234567890ABCDEF018 /* Main in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF019 /* Main */; };
-		A1234567890ABCDEF020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF021 /* Assets.xcassets */; };
-		A1234567890ABCDEF022 /* LaunchScreen in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF023 /* LaunchScreen */; };
+		A1234567890ABCDEF014 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF015 /* Ingredient.swift */; };
+		A1234567890ABCDEF016 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF017 /* Recipe.swift */; };
+		A1234567890ABCDEF018 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF019 /* OpenAIService.swift */; };
+		A1234567890ABCDEF020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF021 /* Main.storyboard */; };
+		A1234567890ABCDEF022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF023 /* Assets.xcassets */; };
+		A1234567890ABCDEF024 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF025 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,16 +30,18 @@
 		A1234567890ABCDEF008 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF011 /* CookingModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingModeViewController.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF013 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF013 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF015 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF017 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1234567890ABCDEF024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1234567890ABCDEF025 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1234567890ABCDEF015 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		A1234567890ABCDEF017 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A1234567890ABCDEF019 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		A1234567890ABCDEF021 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A1234567890ABCDEF023 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1234567890ABCDEF025 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1234567890ABCDEF026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1234567890ABCDEF027 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A1234567890ABCDEF026 /* Frameworks */ = {
+		A1234567890ABCDEF028 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,38 +51,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A1234567890ABCDEF027 = {
+		A1234567890ABCDEF029 = {
 			isa = PBXGroup;
 			children = (
-				A1234567890ABCDEF028 /* RecipeApp */,
-				A1234567890ABCDEF029 /* Products */,
+				A1234567890ABCDEF030 /* RecipeApp */,
+				A1234567890ABCDEF031 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF028 /* RecipeApp */ = {
+		A1234567890ABCDEF030 /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
 				A1234567890ABCDEF000 /* AppDelegate.swift */,
 				A1234567890ABCDEF002 /* SceneDelegate.swift */,
-				A1234567890ABCDEF030 /* ViewControllers */,
-				A1234567890ABCDEF031 /* Models */,
-				A1234567890ABCDEF019 /* Main */,
-				A1234567890ABCDEF023 /* LaunchScreen */,
-				A1234567890ABCDEF021 /* Assets.xcassets */,
-				A1234567890ABCDEF024 /* Info.plist */,
+				A1234567890ABCDEF032 /* ViewControllers */,
+				A1234567890ABCDEF033 /* Models */,
+				A1234567890ABCDEF021 /* Main.storyboard */,
+				A1234567890ABCDEF025 /* LaunchScreen.storyboard */,
+				A1234567890ABCDEF023 /* Assets.xcassets */,
+				A1234567890ABCDEF026 /* Info.plist */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF029 /* Products */ = {
+		A1234567890ABCDEF031 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1234567890ABCDEF025 /* RecipeApp.app */,
+				A1234567890ABCDEF027 /* RecipeApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF030 /* ViewControllers */ = {
+		A1234567890ABCDEF032 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				A1234567890ABCDEF004 /* KitchenViewController.swift */,
@@ -92,12 +94,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF031 /* Models */ = {
+		A1234567890ABCDEF033 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A1234567890ABCDEF013 /* Ingredient.swift */,
-				A1234567890ABCDEF015 /* Recipe.swift */,
-				A1234567890ABCDEF017 /* OpenAIService.swift */,
+				A1234567890ABCDEF015 /* Ingredient.swift */,
+				A1234567890ABCDEF017 /* Recipe.swift */,
+				A1234567890ABCDEF019 /* OpenAIService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,13 +107,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1234567890ABCDEF032 /* RecipeApp */ = {
+		A1234567890ABCDEF034 /* RecipeApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1234567890ABCDEF033 /* Build configuration list for PBXNativeTarget "RecipeApp" */;
+			buildConfigurationList = A1234567890ABCDEF035 /* Build configuration list for PBXNativeTarget "RecipeApp" */;
 			buildPhases = (
-				A1234567890ABCDEF034 /* Sources */,
-				A1234567890ABCDEF026 /* Frameworks */,
-				A1234567890ABCDEF035 /* Resources */,
+				A1234567890ABCDEF036 /* Sources */,
+				A1234567890ABCDEF028 /* Frameworks */,
+				A1234567890ABCDEF037 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -119,25 +121,25 @@
 			);
 			name = RecipeApp;
 			productName = RecipeApp;
-			productReference = A1234567890ABCDEF025 /* RecipeApp.app */;
+			productReference = A1234567890ABCDEF027 /* RecipeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A1234567890ABCDEF036 /* Project object */ = {
+		A1234567890ABCDEF038 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					A1234567890ABCDEF032 = {
+					A1234567890ABCDEF034 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = A1234567890ABCDEF037 /* Build configuration list for PBXProject "RecipeApp" */;
+			buildConfigurationList = A1234567890ABCDEF039 /* Build configuration list for PBXProject "RecipeApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,31 +147,31 @@
 				en,
 				Base,
 			);
-			mainGroup = A1234567890ABCDEF027;
-			productRefGroup = A1234567890ABCDEF029 /* Products */;
+			mainGroup = A1234567890ABCDEF029;
+			productRefGroup = A1234567890ABCDEF031 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1234567890ABCDEF032 /* RecipeApp */,
+				A1234567890ABCDEF034 /* RecipeApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A1234567890ABCDEF035 /* Resources */ = {
+		A1234567890ABCDEF037 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1234567890ABCDEF020 /* Assets.xcassets in Resources */,
-				A1234567890ABCDEF018 /* Main in Resources */,
-				A1234567890ABCDEF022 /* LaunchScreen in Resources */,
+				A1234567890ABCDEF022 /* Assets.xcassets in Resources */,
+				A1234567890ABCDEF020 /* Main.storyboard in Resources */,
+				A1234567890ABCDEF024 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1234567890ABCDEF034 /* Sources */ = {
+		A1234567890ABCDEF036 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,25 +182,27 @@
 				A1234567890ABCDEF009 /* RecipeViewController.swift in Sources */,
 				A1234567890ABCDEF010 /* CookingModeViewController.swift in Sources */,
 				A1234567890ABCDEF012 /* SettingsViewController.swift in Sources */,
-				A1234567890ABCDEF012 /* Ingredient.swift in Sources */,
-				A1234567890ABCDEF014 /* Recipe.swift in Sources */,
-				A1234567890ABCDEF016 /* OpenAIService.swift in Sources */,
+				A1234567890ABCDEF014 /* Ingredient.swift in Sources */,
+				A1234567890ABCDEF016 /* Recipe.swift in Sources */,
+				A1234567890ABCDEF018 /* OpenAIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A1234567890ABCDEF019 /* Main */ = {
+		A1234567890ABCDEF021 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
+				A1234567890ABCDEF040 /* Base */,
 			);
 			name = Main;
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF023 /* LaunchScreen */ = {
+		A1234567890ABCDEF025 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
+				A1234567890ABCDEF041 /* Base */,
 			);
 			name = LaunchScreen;
 			sourceTree = "<group>";
@@ -206,7 +210,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A1234567890ABCDEF040 /* Debug */ = {
+		A1234567890ABCDEF042 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,7 +273,7 @@
 			};
 			name = Debug;
 		};
-		A1234567890ABCDEF041 /* Release */ = {
+		A1234567890ABCDEF043 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -319,25 +323,24 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				SDKROAW = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		A1234567890ABCDEF042 /* Debug */ = {
+		A1234567890ABCDEF044 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8B65XZF9ZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -345,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.manurevi.RecipeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -353,19 +356,18 @@
 			};
 			name = Debug;
 		};
-		A1234567890ABCDEF043 /* Release */ = {
+		A1234567890ABCDEF045 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8B65XZF9ZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,7 +375,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.manurevi.RecipeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -384,7 +386,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1234567890ABCDEF033 /* Build configuration list for PBXNativeTarget "RecipeApp" */ = {
+		A1234567890ABCDEF035 /* Build configuration list for PBXNativeTarget "RecipeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1234567890ABCDEF044 /* Debug */,
+				A1234567890ABCDEF045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1234567890ABCDEF039 /* Build configuration list for PBXProject "RecipeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1234567890ABCDEF042 /* Debug */,
@@ -393,16 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1234567890ABCDEF037 /* Build configuration list for PBXProject "RecipeApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A1234567890ABCDEF040 /* Debug */,
-				A1234567890ABCDEF041 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A1234567890ABCDEF036 /* Project object */;
+	rootObject = A1234567890ABCDEF038 /* Project object */;
 }
