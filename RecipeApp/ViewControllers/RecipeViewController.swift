@@ -39,8 +39,8 @@ class RecipeViewController: UIViewController {
         
         // Create play button
         let playButton = UIButton(type: .system)
-        playButton.setTitle("▶", for: .normal)
-        playButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        playButton.setTitle("👨‍🍳 Cook", for: .normal)
+        playButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         playButton.backgroundColor = .systemOrange
         playButton.setTitleColor(.white, for: .normal)
         playButton.layer.cornerRadius = 10
@@ -63,7 +63,7 @@ class RecipeViewController: UIViewController {
             playButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             playButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            playButton.heightAnchor.constraint(equalToConstant: 40)
+            playButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     

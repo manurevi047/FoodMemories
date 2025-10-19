@@ -33,7 +33,7 @@ class KitchenViewController: UIViewController {
         
         // Create cook button
         let cookButton = UIButton(type: .system)
-        cookButton.setTitle("🍳 Cook", for: .normal)
+        cookButton.setTitle("🍳 Generate recipe", for: .normal)
         cookButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         cookButton.backgroundColor = .systemOrange
         cookButton.setTitleColor(.white, for: .normal)
