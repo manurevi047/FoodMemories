@@ -190,7 +190,13 @@ class RecipeViewController: UIViewController {
     
     private func createDirectionLabel(text: String, stepNumber: Int) -> UILabel {
         let label = UILabel()
-        label.text = "\(stepNumber). \(text)"
+        
+        // Remove "Step X:" prefix if it exists in the text
+        let cleanedText = text.replacingOccurrences(of: "Step \\(stepNumber):", with: "", options: .regularExpression)
+            .replacingOccurrences(of: "Step \\d+:", with: "", options: .regularExpression)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        label.text = "\(stepNumber). \(cleanedText)"
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
