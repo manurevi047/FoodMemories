@@ -160,9 +160,25 @@ class KitchenViewController: UIViewController {
         )
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-            self?.ingredients.remove(at: indexPath.row)
-            self?.saveIngredients()
-            self?.tableView.deleteRows(at: [indexPath], with: .fade)
+            guard let self = self else { return }
+            
+            // Remove ingredient from array
+            self.ingredients.remove(at: indexPath.row)
+            self.saveIngredients()
+            
+            // Update table view with animation
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.endUpdates()
+            
+            // Show success feedback
+            let successAlert = UIAlertController(
+                title: "Deleted",
+                message: "\(ingredient.name) has been removed from your ingredients.",
+                preferredStyle: .alert
+            )
+            successAlert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(successAlert, animated: true)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -242,6 +258,12 @@ extension KitchenViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as! IngredientTableViewCell
         let ingredient = ingredients[indexPath.row]
         cell.configure(with: ingredient)
+        
+        // Set up delete button callback
+        cell.onDeleteTapped = { [weak self] in
+            self?.deleteIngredient(at: indexPath)
+        }
+        
         return cell
     }
 }
@@ -263,6 +285,14 @@ extension KitchenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Delete"
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
 }
 
 // MARK: - Custom Table View Cell
@@ -271,6 +301,9 @@ class IngredientTableViewCell: UITableViewCell {
     private let nameLabel = UILabel()
     private let detailsLabel = UILabel()
     private let categoryLabel = UILabel()
+    private let deleteButton = UIButton(type: .system)
+    
+    var onDeleteTapped: (() -> Void)?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -287,7 +320,14 @@ class IngredientTableViewCell: UITableViewCell {
         detailsLabel.textColor = .secondaryLabel
         categoryLabel.font = UIFont.systemFont(ofSize: 20)
         
-        [nameLabel, detailsLabel, categoryLabel].forEach {
+        deleteButton.setTitle("🗑️", for: .normal)
+        deleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        deleteButton.backgroundColor = .systemRed.withAlphaComponent(0.1)
+        deleteButton.layer.cornerRadius = 15
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+        
+        [nameLabel, detailsLabel, categoryLabel, deleteButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
@@ -299,13 +339,22 @@ class IngredientTableViewCell: UITableViewCell {
             
             nameLabel.leadingAnchor.constraint(equalTo: categoryLabel.trailingAnchor, constant: 12),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            nameLabel.trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor, constant: -12),
             
             detailsLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             detailsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 2),
             detailsLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-            detailsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            detailsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            
+            deleteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            deleteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            deleteButton.widthAnchor.constraint(equalToConstant: 30),
+            deleteButton.heightAnchor.constraint(equalToConstant: 30)
         ])
+    }
+    
+    @objc private func deleteButtonTapped() {
+        onDeleteTapped?()
     }
     
     func configure(with ingredient: Ingredient) {
