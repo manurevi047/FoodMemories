@@ -12,13 +12,14 @@
 		A1234567890ABCDEF005 /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF004 /* KitchenViewController.swift */; };
 		A1234567890ABCDEF007 /* CookBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF006 /* CookBookViewController.swift */; };
 		A1234567890ABCDEF009 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF008 /* RecipeViewController.swift */; };
-		A1234567890ABCDEF010 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF011 /* SettingsViewController.swift */; };
+		A1234567890ABCDEF010 /* CookingModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF011 /* CookingModeViewController.swift */; };
+		A1234567890ABCDEF012 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF013 /* SettingsViewController.swift */; };
 		A1234567890ABCDEF012 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF013 /* Ingredient.swift */; };
 		A1234567890ABCDEF014 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF015 /* Recipe.swift */; };
 		A1234567890ABCDEF016 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF017 /* OpenAIService.swift */; };
-		A1234567890ABCDEF018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF019 /* Main.storyboard */; };
+		A1234567890ABCDEF018 /* Main in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF019 /* Main */; };
 		A1234567890ABCDEF020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF021 /* Assets.xcassets */; };
-		A1234567890ABCDEF022 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF023 /* LaunchScreen.storyboard */; };
+		A1234567890ABCDEF022 /* LaunchScreen in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF023 /* LaunchScreen */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +28,12 @@
 		A1234567890ABCDEF004 /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF006 /* CookBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookBookViewController.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF008 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF011 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A1234567890ABCDEF011 /* CookingModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingModeViewController.swift; sourceTree = "<group>"; };
+		A1234567890ABCDEF013 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF013 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF015 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF017 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF019 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1234567890ABCDEF021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1234567890ABCDEF023 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1234567890ABCDEF024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1234567890ABCDEF025 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,8 +64,8 @@
 				A1234567890ABCDEF002 /* SceneDelegate.swift */,
 				A1234567890ABCDEF030 /* ViewControllers */,
 				A1234567890ABCDEF031 /* Models */,
-				A1234567890ABCDEF019 /* Main.storyboard */,
-				A1234567890ABCDEF023 /* LaunchScreen.storyboard */,
+				A1234567890ABCDEF019 /* Main */,
+				A1234567890ABCDEF023 /* LaunchScreen */,
 				A1234567890ABCDEF021 /* Assets.xcassets */,
 				A1234567890ABCDEF024 /* Info.plist */,
 			);
@@ -86,7 +86,8 @@
 				A1234567890ABCDEF004 /* KitchenViewController.swift */,
 				A1234567890ABCDEF006 /* CookBookViewController.swift */,
 				A1234567890ABCDEF008 /* RecipeViewController.swift */,
-				A1234567890ABCDEF011 /* SettingsViewController.swift */,
+				A1234567890ABCDEF011 /* CookingModeViewController.swift */,
+				A1234567890ABCDEF013 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,8 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1234567890ABCDEF020 /* Assets.xcassets in Resources */,
-				A1234567890ABCDEF018 /* Main.storyboard in Resources */,
-				A1234567890ABCDEF022 /* LaunchScreen.storyboard in Resources */,
+				A1234567890ABCDEF018 /* Main in Resources */,
+				A1234567890ABCDEF022 /* LaunchScreen in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +178,8 @@
 				A1234567890ABCDEF005 /* KitchenViewController.swift in Sources */,
 				A1234567890ABCDEF007 /* CookBookViewController.swift in Sources */,
 				A1234567890ABCDEF009 /* RecipeViewController.swift in Sources */,
-				A1234567890ABCDEF010 /* SettingsViewController.swift in Sources */,
+				A1234567890ABCDEF010 /* CookingModeViewController.swift in Sources */,
+				A1234567890ABCDEF012 /* SettingsViewController.swift in Sources */,
 				A1234567890ABCDEF012 /* Ingredient.swift in Sources */,
 				A1234567890ABCDEF014 /* Recipe.swift in Sources */,
 				A1234567890ABCDEF016 /* OpenAIService.swift in Sources */,
@@ -187,18 +189,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A1234567890ABCDEF019 /* Main.storyboard */ = {
+		A1234567890ABCDEF019 /* Main */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A1234567890ABCDEF038 /* Base */,
 			);
 			name = Main;
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF023 /* LaunchScreen.storyboard */ = {
+		A1234567890ABCDEF023 /* LaunchScreen */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A1234567890ABCDEF039 /* Base */,
 			);
 			name = LaunchScreen;
 			sourceTree = "<group>";
@@ -332,11 +332,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B65XZF9ZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RecipeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manurevi.RecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -359,11 +360,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B65XZF9ZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -371,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RecipeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manurevi.RecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

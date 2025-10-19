@@ -25,6 +25,14 @@ class RecipeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         // Setup navigation bar
+        let playButton = UIBarButtonItem(
+            title: "▶️",
+            style: .plain,
+            target: self,
+            action: #selector(playButtonTapped)
+        )
+        
+        navigationItem.leftBarButtonItem = playButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
@@ -205,5 +213,11 @@ class RecipeViewController: UIViewController {
     
     @objc private func doneButtonTapped() {
         dismiss(animated: true)
+    }
+    
+    @objc private func playButtonTapped() {
+        let cookingModeVC = CookingModeViewController(recipe: recipe)
+        cookingModeVC.modalPresentationStyle = .fullScreen
+        present(cookingModeVC, animated: true)
     }
 }
