@@ -31,7 +31,8 @@ class OpenAIService {
         let prompt = """
         Generate a delicious recipe using these ingredients: \(ingredientsText)
         
-        Please respond with a JSON object in this exact format:
+        IMPORTANT: Respond ONLY with a valid JSON object in this exact format. Do not include any text before or after the JSON:
+        
         {
             "title": "Recipe Name",
             "serves": 4,
@@ -50,7 +51,7 @@ class OpenAIService {
             ]
         }
         
-        Make sure the recipe is practical and uses the provided ingredients creatively. Include all necessary additional ingredients for a complete recipe.
+        Make sure the recipe is practical and uses the provided ingredients creatively. Include all necessary additional ingredients for a complete recipe. Respond with ONLY the JSON object, no other text.
         """
         
         let requestBody: [String: Any] = [
@@ -84,10 +85,23 @@ class OpenAIService {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
+                print("Network error: \(error)")
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
                 return
+            }
+            
+            // Check HTTP response status
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Status Code: \(httpResponse.statusCode)")
+                if httpResponse.statusCode != 200 {
+                    let errorMessage = "HTTP Error: \(httpResponse.statusCode)"
+                    DispatchQueue.main.async {
+                        completion(.failure(OpenAIError.invalidResponse))
+                    }
+                    return
+                }
             }
             
             guard let data = data else {
@@ -98,22 +112,53 @@ class OpenAIService {
             }
             
             do {
+                // First, let's check if we got a valid response
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("OpenAI Response: \(responseString)")
+                }
+                
                 let response = try JSONDecoder().decode(OpenAIResponse.self, from: data)
                 if let content = response.choices.first?.message.content {
-                    // Extract JSON from the response content
+                    print("OpenAI Content: \(content)")
+                    
+                    // Try to extract JSON from the response content
                     let jsonStart = content.range(of: "{")
                     let jsonEnd = content.range(of: "}", options: .backwards)
                     
+                    // Try to parse the entire content as JSON first
+                    if let jsonData = content.data(using: .utf8) {
+                        do {
+                            let recipe = try JSONDecoder().decode(Recipe.self, from: jsonData)
+                            DispatchQueue.main.async {
+                                completion(.success(recipe))
+                            }
+                            return
+                        } catch {
+                            print("Failed to parse entire content as JSON: \(error)")
+                        }
+                    }
+                    
+                    // If that fails, try to extract JSON from the content
                     if let start = jsonStart?.lowerBound, let end = jsonEnd?.upperBound {
                         let jsonString = String(content[start..<end])
-                        let recipe = try JSONDecoder().decode(Recipe.self, from: jsonString.data(using: .utf8)!)
-                        DispatchQueue.main.async {
-                            completion(.success(recipe))
+                        print("Extracted JSON: \(jsonString)")
+                        
+                        if let jsonData = jsonString.data(using: .utf8) {
+                            do {
+                                let recipe = try JSONDecoder().decode(Recipe.self, from: jsonData)
+                                DispatchQueue.main.async {
+                                    completion(.success(recipe))
+                                }
+                                return
+                            } catch {
+                                print("Failed to parse extracted JSON: \(error)")
+                            }
                         }
-                    } else {
-                        DispatchQueue.main.async {
-                            completion(.failure(OpenAIError.invalidResponse))
-                        }
+                    }
+                    
+                    // If all parsing attempts fail, return error
+                    DispatchQueue.main.async {
+                        completion(.failure(OpenAIError.invalidResponse))
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -121,6 +166,7 @@ class OpenAIService {
                     }
                 }
             } catch {
+                print("JSON Decoding Error: \(error)")
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
