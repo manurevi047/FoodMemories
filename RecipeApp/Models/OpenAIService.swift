@@ -16,6 +16,9 @@ class OpenAIService {
             return
         }
         
+        print("API Key length: \(apiKey.count)")
+        print("API Key starts with: \(String(apiKey.prefix(10)))...")
+        
         let ingredientsText = ingredients.map { ingredient in
             var text = ingredient.name
             if !ingredient.quantity.isEmpty {
@@ -28,8 +31,11 @@ class OpenAIService {
             return text
         }.joined(separator: ", ")
         
+        let cookingStyles = ["Italian", "Asian", "Mexican", "Mediterranean", "Indian", "American", "French", "Thai", "Chinese", "Middle Eastern"]
+        let randomStyle = cookingStyles.randomElement() ?? "International"
+        
         let prompt = """
-        Generate a delicious recipe using these ingredients: \(ingredientsText)
+        Generate a delicious \(randomStyle) style recipe using these ingredients: \(ingredientsText)
         
         IMPORTANT: Respond ONLY with a valid JSON object in this exact format. Do not include any text before or after the JSON:
         
@@ -51,7 +57,7 @@ class OpenAIService {
             ]
         }
         
-        Make sure the recipe is practical and uses the provided ingredients creatively. Include all necessary additional ingredients for a complete recipe. Respond with ONLY the JSON object, no other text.
+        Be creative and create a unique \(randomStyle) style recipe that uses the provided ingredients. Include all necessary additional ingredients for a complete recipe. Make it different from typical recipes. Respond with ONLY the JSON object, no other text.
         """
         
         let requestBody: [String: Any] = [
@@ -95,8 +101,17 @@ class OpenAIService {
             // Check HTTP response status
             if let httpResponse = response as? HTTPURLResponse {
                 print("HTTP Status Code: \(httpResponse.statusCode)")
-                if httpResponse.statusCode != 200 {
-                    let errorMessage = "HTTP Error: \(httpResponse.statusCode)"
+                if httpResponse.statusCode == 401 {
+                    DispatchQueue.main.async {
+                        completion(.failure(OpenAIError.unauthorized))
+                    }
+                    return
+                } else if httpResponse.statusCode == 429 {
+                    DispatchQueue.main.async {
+                        completion(.failure(OpenAIError.rateLimit))
+                    }
+                    return
+                } else if httpResponse.statusCode != 200 {
                     DispatchQueue.main.async {
                         completion(.failure(OpenAIError.invalidResponse))
                     }
@@ -192,6 +207,8 @@ enum OpenAIError: Error, LocalizedError {
     case invalidURL
     case noData
     case invalidResponse
+    case unauthorized
+    case rateLimit
     
     var errorDescription: String? {
         switch self {
@@ -203,6 +220,10 @@ enum OpenAIError: Error, LocalizedError {
             return "No data received from API"
         case .invalidResponse:
             return "Invalid response from API"
+        case .unauthorized:
+            return "API key is invalid or expired. Please check your OpenAI API key in Settings."
+        case .rateLimit:
+            return "API rate limit exceeded. Please wait a moment and try again."
         }
     }
 }
