@@ -212,7 +212,7 @@ class RecipeViewController: UIViewController {
             .replacingOccurrences(of: "Step \\d+:", with: "", options: .regularExpression)
             .trimmingCharacters(in: .whitespacesAndNewlines)
         
-        label.text = "\(stepNumber). \(cleanedText)"
+        label.text = "• \(cleanedText)"
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false

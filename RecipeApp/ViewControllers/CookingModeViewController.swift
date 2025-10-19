@@ -6,7 +6,6 @@ class CookingModeViewController: UIViewController {
     private var currentStepIndex = 0
     
     private let backgroundView = UIView()
-    private let stepCounterLabel = UILabel()
     private let instructionLabel = UILabel()
     private let closeButton = UIButton(type: .system)
     
@@ -51,13 +50,6 @@ class CookingModeViewController: UIViewController {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(closeButton)
-        
-        // Setup step counter
-        stepCounterLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        stepCounterLabel.textColor = .white
-        stepCounterLabel.textAlignment = .center
-        stepCounterLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stepCounterLabel)
         
         // Setup instruction label
         instructionLabel.font = UIFont.systemFont(ofSize: 28, weight: .regular)
@@ -116,11 +108,6 @@ class CookingModeViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 40),
             closeButton.heightAnchor.constraint(equalToConstant: 40),
             
-            // Step counter
-            stepCounterLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            stepCounterLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stepCounterLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -20),
-            
             // Instruction label
             instructionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             instructionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
@@ -153,9 +140,6 @@ class CookingModeViewController: UIViewController {
     private func updateDisplay() {
         let currentStep = currentStepIndex + 1
         let totalSteps = recipe.directions.count
-        
-        // Update step counter
-        stepCounterLabel.text = "Step \(currentStep) of \(totalSteps)"
         
         // Update instruction
         if currentStepIndex < recipe.directions.count {
