@@ -25,14 +25,6 @@ class RecipeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         // Setup navigation bar
-        let playButton = UIBarButtonItem(
-            title: "▶️",
-            style: .plain,
-            target: self,
-            action: #selector(playButtonTapped)
-        )
-        
-        navigationItem.leftBarButtonItem = playButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
@@ -45,17 +37,33 @@ class RecipeViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
+        // Create play button
+        let playButton = UIButton(type: .system)
+        playButton.setTitle("▶", for: .normal)
+        playButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        playButton.backgroundColor = .systemOrange
+        playButton.setTitleColor(.white, for: .normal)
+        playButton.layer.cornerRadius = 10
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
+        view.addSubview(playButton)
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: playButton.topAnchor, constant: -12),
             
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            playButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            playButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            playButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
