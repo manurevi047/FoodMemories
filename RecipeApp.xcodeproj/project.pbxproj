@@ -17,9 +17,9 @@
 		A1234567890ABCDEF014 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF015 /* Ingredient.swift */; };
 		A1234567890ABCDEF016 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF017 /* Recipe.swift */; };
 		A1234567890ABCDEF018 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF019 /* OpenAIService.swift */; };
-		A1234567890ABCDEF020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF021 /* Main.storyboard */; };
+		A1234567890ABCDEF020 /* Main in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF021 /* Main */; };
 		A1234567890ABCDEF022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF023 /* Assets.xcassets */; };
-		A1234567890ABCDEF024 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF025 /* LaunchScreen.storyboard */; };
+		A1234567890ABCDEF024 /* LaunchScreen in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF025 /* LaunchScreen */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,7 @@
 		A1234567890ABCDEF015 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF017 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF019 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF021 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1234567890ABCDEF023 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1234567890ABCDEF025 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1234567890ABCDEF026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1234567890ABCDEF027 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -66,8 +64,8 @@
 				A1234567890ABCDEF002 /* SceneDelegate.swift */,
 				A1234567890ABCDEF032 /* ViewControllers */,
 				A1234567890ABCDEF033 /* Models */,
-				A1234567890ABCDEF021 /* Main.storyboard */,
-				A1234567890ABCDEF025 /* LaunchScreen.storyboard */,
+				A1234567890ABCDEF021 /* Main */,
+				A1234567890ABCDEF025 /* LaunchScreen */,
 				A1234567890ABCDEF023 /* Assets.xcassets */,
 				A1234567890ABCDEF026 /* Info.plist */,
 			);
@@ -163,8 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1234567890ABCDEF022 /* Assets.xcassets in Resources */,
-				A1234567890ABCDEF020 /* Main.storyboard in Resources */,
-				A1234567890ABCDEF024 /* LaunchScreen.storyboard in Resources */,
+				A1234567890ABCDEF020 /* Main in Resources */,
+				A1234567890ABCDEF024 /* LaunchScreen in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,18 +189,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A1234567890ABCDEF021 /* Main.storyboard */ = {
+		A1234567890ABCDEF021 /* Main */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A1234567890ABCDEF040 /* Base */,
 			);
 			name = Main;
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF025 /* LaunchScreen.storyboard */ = {
+		A1234567890ABCDEF025 /* LaunchScreen */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A1234567890ABCDEF041 /* Base */,
 			);
 			name = LaunchScreen;
 			sourceTree = "<group>";
@@ -336,11 +332,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B65XZF9ZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -348,7 +343,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RecipeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manurevi.RecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -365,9 +360,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
